@@ -1,0 +1,118 @@
+<ion-header >
+  <ion-toolbar  mode="ios">
+    <ion-title>
+      <h3 style="margin-top: 10px;">Register</h3>
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button style="margin-left: 10px;color: black;" text="" defaultHref="main"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <form class="form" #f="ngForm" [formGroup]="validations_form" (ngSubmit)="tryRegister(validations_form.value)">
+      <ion-grid class=""> 
+        <ion-row >
+          <ion-col>
+            <div class="forminput">
+              <ion-item>
+                <ion-label position="floating">Nama Depan</ion-label>
+                <ion-input formControlName="namadepan"></ion-input>          
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <div class="forminput">
+              <ion-item>
+                <ion-label position="floating">Nama Belakang</ion-label>
+                <ion-input formControlName="namabelakang"></ion-input>
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+            <div class="forminput">
+              <ion-item>
+                <ion-label position="floating">NIM</ion-label>
+                <ion-input formControlName="nim"></ion-input>          
+              </ion-item>
+            </div>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="forminput">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email"></ion-input>          
+            </ion-item>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.email">
+              <div class="error-message alertmsg"
+                *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="forminput">
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>          
+            </ion-item>
+          </div>
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.password">
+              <div class="error-message alertmsg"
+                *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="forminput">
+            <ion-item>
+              <ion-label position="floating">Confirm Password</ion-label>
+              <ion-input type="password" formControlName="confirmpassword"></ion-input>          
+            </ion-item>
+          </div>
+          <div class="validation-errors">
+              <div class="error-message alertmsg"
+                *ngIf="validations_form.get('confirmpassword').touched && validations_form.hasError('mismatchedPasswords') && validations_form.controls.password.valid">
+                Password doesn't match, try again.
+              </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="ion-margin-top">
+          <div class="btn-daftar ion-padding-horizontal ion-margin-bottom">
+            <ion-button expand="block" class="btn-submit" type="submit" [disabled]="!validations_form.valid">REGISTER</ion-button>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-input placeholder="foto" formControlName="foto" hidden></ion-input>
+    <div class="ion-text-center alertmsg">
+      <label class="error-message">{{ errorMessage }}</label>
+            <label class="success-message">{{ successMessage }}</label>        
+    </div>
+  </ion-grid>
+</form>
+  </div>
+  <div>
+</div>
+
+</ion-content>

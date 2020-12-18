@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Maps
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" slot="fixed">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="9">
+            <ion-item lines="none">
+              <ion-input class="text-input" type="text" name="checkin" ngModel placeholder="Location name"></ion-input>
+            </ion-item>      
+          </ion-col>
+          <ion-col size="3">
+            <ion-button expand="expand" type ="submit" class="btn-submit">Check in</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-fab>
+  <div #map id="map">
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="showCurrentLocation()" class="ion-padding">
+    <ion-fab-button>
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

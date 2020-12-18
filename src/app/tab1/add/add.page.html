@@ -1,0 +1,30 @@
+<ion-header >
+  <ion-toolbar mode="ios">
+    <ion-title>
+      Add New Friend
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button style="margin-left: 5px; color: black;" text="" defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="text-add">
+      <ion-item>
+        <ion-label class="text-label" position="floating">Name</ion-label>
+        <ion-input class="text-input" type="text" ngModel name="name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-label" position="floating">Image URL</ion-label>
+        <ion-input class="text-input" type="text" ngModel name="image" required></ion-input>
+      </ion-item>
+
+      <div class="btn-add ion-margin-top ion-padding-horizontal">
+        <ion-button slot="end" type ="submit" class="btn-submit" expand="block">Add</ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>

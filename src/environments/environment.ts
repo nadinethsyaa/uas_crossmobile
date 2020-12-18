@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyAOyvdu4tnYZo7K_xGjro1BxlISmgjS6lk",
+    authDomain: "uas-crossmobile.firebaseapp.com",
+    databaseURL: "https://uas-crossmobile-default-rtdb.firebaseio.com",
+    projectId: "uas-crossmobile",
+    storageBucket: "uas-crossmobile.appspot.com",
+    messagingSenderId: "1030961086789",
+    appId: "1:1030961086789:web:81f9566e68510afc62be2c",
+    measurementId: "G-EZQ8SGYXCJ"
+  }
 };
 
 /*

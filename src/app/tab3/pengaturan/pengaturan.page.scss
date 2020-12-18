@@ -1,0 +1,132 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+  ion-title {
+    font-family:'Helvetica';
+    font-size: 17px;
+  }
+  
+  ion-toolbar {
+    text-align: center;
+    --background: #f3ad2e;
+    color: black;
+  }
+  
+  ion-content {
+    --background-color: linear-gradient(rgba(255,255,255,1) 100%) !important;
+  }
+
+  .img-pengaturan{
+    text-align: center;
+    height: 180px;
+    width: 100%;
+  }
+
+  .img-profile{
+    margin-top: 45px;
+    width: 130px;
+    height:130px;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .btn-upload{
+    display: inline;
+    margin-left: -38px;
+    font-size: 30px;
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+  }
+
+  .text-pengaturan{
+    width:85%;
+    height:150px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:10px;
+  }
+
+  .text-label{
+    font-family:'Helvetica';
+    font-size: 16px;
+    color:#646464;
+  }
+
+  .text-input{
+    font-family:'Helvetica';
+    font-size: 16px;
+    columns: #000000;;
+  }
+
+  ion-item{
+    --inset-highlight-height:0.8px;
+    --highlight-background:#000000;
+    --highlight-color-focused: #000000;
+    --padding-start: 0px;
+  }
+
+  ion-label {
+    color: #000000 !important;
+  }
+
+  ion-button{
+    --background: #000000;
+    --border-radius:10px;
+    text-transform: none;
+  }
+
+  .btn-submit{
+    width: 90px;
+    margin-right: -15px;
+    font-family:'Helvetica';
+    font-size: 12px;
+  }
+
+  .btn-pengaturan{
+    width:85%;
+    height:150px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:10px;
+    text-align: right;
+  }
+
+  .fileUp {
+    position: absolute;
+    opacity: 0;
+    margin-top: -48px;
+    margin-left: 50%;
+    z-index: 9999;
+    font-size: 25px;
+
+  }

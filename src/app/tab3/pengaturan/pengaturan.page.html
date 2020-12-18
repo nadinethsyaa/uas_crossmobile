@@ -1,0 +1,50 @@
+<ion-header >
+  <ion-toolbar mode="ios">
+    <ion-title>
+      Account Settings
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button style="color:black;margin-left:10px" text="" defaultHref="tabs/tab3"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="img-pengaturan">
+      <img class="img-profile" [src]="imgSrc">
+      <ion-buttons class="btn-upload" for="fileUp">
+        <ion-icon name="cloud-upload"></ion-icon> 
+      </ion-buttons>
+      <ion-input type="file" accept="image/*" (change)="changeListener($event)" ngModel name="foto" class="fileUp"></ion-input>     
+
+    </div>
+    <div class="text-pengaturan">
+      
+      <ion-item>
+        <ion-label class="text-label" position="floating">Nama Depan</ion-label>
+        <ion-input value="{{ user?.namadepan }}" class="text-input" type="text" ngModel name="namadepan"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-label" position="floating">Nama Belakang</ion-label>
+        <ion-input value="{{ user?.namabelakang }}" class="text-input" type="text" ngModel name="namabelakang"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-label" position="floating">NIM</ion-label>
+        <ion-input value="{{ user?.nim }}" class="text-input" type="text" ngModel name="nim"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label class="text-label" position="floating">Email</ion-label>
+        <ion-input value="{{ userEmail }}" disabled="true"></ion-input>
+      </ion-item>
+  
+      <div class="btn-pengaturan">
+        <ion-button slot="end" type ="submit" class="btn-submit">SAVE</ion-button>
+      </div>
+    </div>
+  </form>
+
+</ion-content>
